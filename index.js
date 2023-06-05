@@ -1,4 +1,5 @@
-searchTrackcode = function(){
+searchTrackcode = function(event){
+  event.preventDefault();
     let trackcode = document.getElementById('search-input').value;
     if (trackcode.length > 0) {
       trackcode = encodeURIComponent(trackcode)
@@ -25,3 +26,4 @@ function toggleDarkMode() {
       document.body.classList.remove('dark-mode');
     }
   }
+
