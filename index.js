@@ -44,13 +44,40 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-searchTrackcode = function(){
+
+searchTrackcode = function(event){
+  
+    event.preventDefault();
+    
     let trackcode = document.getElementById('search-input').value;
     if (trackcode.length > 0) {
       trackcode = encodeURIComponent(trackcode)
       const urlRedirec = "https://atari.chazki.com/#/public/seguimiento/1/"+trackcode;
       console.log(urlRedirec)
-      window.open(urlRedirec, "_blank");
+
+
+      const existingFrames = document.querySelectorAll('iframe');
+    existingFrames.forEach(frame => {
+      frame.parentNode.removeChild(frame);
+    });
+      // window.open(urlRedirec,"_blank");
+      const iframeContainer = document.createElement('div');
+      iframeContainer.style.display = 'flex';
+      iframeContainer.style.justifyContent = 'center';
+      
+      const iframe = document.createElement('iframe');
+      iframe.src = urlRedirec;
+      iframe.style.width = '70%';
+      iframe.style.height = '800px';
+      iframe.style.border = 'none';
+      // iframe.style.margin = ' 0 auto';
+
+      iframe.style.transform = 'scale(0.85)';
+      // Añadir el <iframe> al documento
+      // document.body.appendChild(iframe);
+      iframeContainer.appendChild(iframe);
+      document.body.appendChild(iframeContainer);
+     
     }
   };
 

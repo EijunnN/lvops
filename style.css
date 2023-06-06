@@ -1,6 +1,9 @@
+html {
+  height: 500px;
+}
 body {
   /*background-color: rgb(231, 227, 227);*/
-  
+  height: 600px;
   color: #1e1f22;
 }
 
@@ -25,7 +28,7 @@ body {
 .team-liveops {
   max-width: 100%;
   height: auto;
-
+  
   margin-top: 10px;
 
   border-radius: 13px;
@@ -34,7 +37,7 @@ body {
 }
 .chazki {
   width: 100%;
-  height: 100%;
+  height: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,3 +136,4 @@ body {
   padding: 1px;
  
 }
+
