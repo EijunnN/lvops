@@ -1,9 +1,12 @@
-html {
-  height: 500px;
+html, body{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
 }
 body {
   /*background-color: rgb(231, 227, 227);*/
-  height: 600px;
+  
   color: #1e1f22;
 }
 
@@ -137,3 +140,61 @@ body {
  
 }
 
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-family: cascadia code;
+}
+
+
+/* Path: style.css */
+
+
+
+svg {
+  transform: scale(0.7);
+  z-index: 2;
+  pointer-events: none;
+}
+
+#day,
+#night {
+  width: 190px;
+  height: 80px;
+  background: white;
+  position: absolute;
+  z-index: 0;
+  cursor: pointer;
+  border-radius: 800px;
+  background: #9cd6ef;
+  border: 3px solid #65c0e7;
+  top: 48px;
+  left: 97px;
+  
+}
+
+#night {
+  pointer-events: none;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #d3edf8;
+  z-index: -1;
+  
+}
+
+@media (max-width: 720px) {
+  #day,
+  #night {
+    width: 160px;
+    height: 75px;
+  }
+  svg {
+    transform: scale(0.95);
+  }
+}
